@@ -1,0 +1,39 @@
+<form id="songs">
+<p>Name: <input name="name" id="name" type="text" placeholder="FEFE"/></p>
+<p>Year: <input name="year" id="year" type="text" placeholder="2018"/></p>
+<p>Artist: <input name="artist" id="artist" type="text" placeholder="6ix9ine"/></p>
+<p>Album: <input name="album" id="album" type="text" placeholder="FEFE"/></p>
+<p>Feature: <input name="features" id="features" type="text" placeholder="Nicki Minaj, Murda Beatz"/></p>
+
+<button>POST</button>
+</form>
+    
+<br>
+<p>Search: <input name="search" id="search" type="text" placeholder="search"/></p>
+<p>Song list</p>
+{{!-- <ul id="songlist">
+{{#each songs}}
+<li>{{this.name}}- {{this.artist}}</li>
+{{/each}}
+</ul> --}}
+
+<table>
+<thead>
+    <th>Name</th>
+    <th>Year</th>
+    <th>Artist</th>
+    <th>Album</th>
+    <th>Features</th>
+ </thead>
+ <tbody>
+    {{#each songs}}
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.year}}</td>
+      <td>{{this.artist}}</td>
+      <td>{{this.album}}</td>
+      <td>{{this.features}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

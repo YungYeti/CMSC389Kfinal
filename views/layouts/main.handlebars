@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+    <title>Final Project</title>
+</head>
+
+<div class = 'nav'>
+    <a href="/">Home</a>
+	<a href="/kayne">kayne</a>
+	<a href="/new">newest</a>
+	<a href="/old">oldest</a>
+	<a href="/singles">singles</a>
+    <a href="/random">random</a>
+
+</div>
+
+<body>
+    {{{body}}}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script>
+	$('#songs').submit(function(){
+		var name = $('#name').val();
+		var year = $('#year').val();
+        var artist = $('#artist').val();
+        var album = $('#album').val();
+        var features = $('#features').val();
+		$('#name').val('');
+		$('#year').val('');
+        $('#artist').val('');
+        $('#album').val('');
+        $('#features').val('');
+		$.ajax({
+		    type: "POST",
+		    url: '/api/addSong',
+		    data: { 
+                    name: name,
+                    year: parseInt(year), 
+                    artist: artist,
+                    album: album,
+                    features: features
+				},
+		    success: function(data, status){
+		        console.log(data);		        
+		    }
+		});	
+		return false;
+	});
+	</script>
+</body>
+</html>
+
